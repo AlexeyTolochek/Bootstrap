@@ -62,12 +62,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .successHandler(myAuthenticationSuccessHandler())
                     .and()
                 .exceptionHandling()
-                    .accessDeniedPage("/access_denied");
+                    .accessDeniedPage("/access_denied")
+                    .and()
+                .logout()
+                .logoutUrl("/user/logout")
+                .logoutSuccessUrl("/");
     }
 
     @Override
     public void configure(WebSecurity webSecurity) {
       webSecurity.ignoring()
-              .antMatchers("/css/**");
+              .antMatchers("/css/**")
+             // .antMatchers("/html/**")
+              .antMatchers("/img/**")
+              .antMatchers("/js/**");
+
     }
 }

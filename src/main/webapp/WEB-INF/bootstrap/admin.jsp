@@ -126,12 +126,12 @@
                                     <h4>Login</h4>
                                     <input type="text" name="login" class="form-control text-center" value="${user.login}">
                                     <h4>Password</h4>
-                                    <input type="text" name="password" class="form-control text-center" value="${user.password}">
+                                    <input type="text" name="password" class="form-control text-center" value="${user.password}" readonly>
                                     <h4>Role</h4>
-                                    <select class="custom-select" type="text" name="role" class="form-control text-center">
+                                    <select class="custom-select form-control text-center" type="text" name="role">
                                       <option selected>${user.roles.toString().replaceAll("^\\[|\\]$", "")}</option>
-                                      <option value="1">USER</option>
-                                      <option value="2">ADMIN</option>
+                                      <option value="USER">USER</option>
+                                      <option value="Admin">ADMIN</option>
                                     </select>
                                 </div>
                                   <div class="col-md-4"></div>
@@ -167,9 +167,9 @@
                           <h4>Password</h4>
                           <input type="text" name="password" class="form-control text-center" placeholder="Password"/>
                           <h4>Role</h4>
-                          <select class="custom-select form-control text-center" name="role">
-                            <option selected value="1">USER</option>
-                            <option value="2">ADMIN</option>
+                          <select class="custom-select form-control text-center" name="role" type="text">
+                            <option selected value="USER">USER</option>
+                            <option value="Admin">ADMIN</option>
                           </select>
                           <br>
                           <button type="submit" class="btn btn-success" formaction="${pageContext.request.contextPath}/admin/add">

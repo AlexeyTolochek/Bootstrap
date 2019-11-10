@@ -18,12 +18,15 @@ public class WebConfig implements WebMvcConfigurer {
    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/css/");
+       registry.addResourceHandler("/img/**").addResourceLocations("/WEB-INF/img/");
+       registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/");
     }
 
     @Bean
     ViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/jsp/");
+        //viewResolver.setPrefix("/WEB-INF/jsp/");
+        viewResolver.setPrefix("/WEB-INF/bootstrap/");
         viewResolver.setSuffix(".jsp");
         return  viewResolver;
     }
